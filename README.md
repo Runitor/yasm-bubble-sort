@@ -6,10 +6,10 @@ A simple program to sort a list of numbers using the following bubble sort algor
 for (i = (length - 1) to 0) {
 	swapped = false
 	for (j = 0 to i - 1)
-		if (list(j) > list(j + 1) {
-			tmp = list(j)
-			list(j) = list(j + 1)
-			list(j + 1) = tmp
+		if (list[j] > list[j + 1]) {
+			tmp = list[j]
+			list[j] = list[j + 1]
+			list[j + 1] = tmp
 			swapped = true
 		}
 	if (swapped = false) exit
