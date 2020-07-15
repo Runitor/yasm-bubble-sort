@@ -2,8 +2,8 @@
 
 A simple program to sort a list of numbers using the following bubble sort algorithm:
 
-	```javascript
-	if (isAwesome){
-	  return true
-	}
-	```
+    ```javascript
+    if (isAwesome){
+         return true
+    }
+    ```
