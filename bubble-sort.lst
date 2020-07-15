@@ -1,0 +1,50 @@
+     1                                 %line 1+1 bubble-sort.asm
+     2                                 
+     3                                 
+     4                                 
+     5                                 
+     6                                 
+     7                                 
+     8                                 
+     9                                 [section .data]
+    10                                 EXIT_SUCCESS equ 0
+    11                                 SYS_exit equ 60
+    12                                 
+    13                                 TRUE equ 255
+    14                                 FALSE equ 0
+    15                                 
+    16 00000000 0A050C061E             bList db 10, 5, 12, 6, 30
+    17 00000005 12030F0714              db 18, 3, 15, 7, 20
+    18 0000000A 0A                     length db 10
+    19                                 
+    20                                 [section .text]
+    21                                 [global _start]
+    22                                 _start:
+    23 00000000 8A0C25[00000000]        mov cl, byte [length]
+    24 00000007 FEC9                    dec cl
+    25                                 sortingLoop:
+    26 00000009 B300                    mov bl, FALSE
+    27 0000000B 40B600                  mov sil, 0
+    28                                 nestedLoop:
+    29 0000000E 448A8E[00000000]        mov r9b, byte [bList + rsi]
+    30 00000015 448A96[01000000]        mov r10b, byte [bList + rsi + 1]
+    31                                 
+    32 0000001C 4538D1                  cmp r9b, r10b
+    33 0000001F 760E                    jbe NotGreater
+    34 00000021 44888E[01000000]        mov byte [bList + rsi + 1], r9b
+    35 00000028 448896[00000000]        mov byte [bList + rsi], r10b
+    36 0000002F B3FF                    mov bl, TRUE
+    37                                 NotGreater:
+    38 00000031 40FEC6                  inc sil
+    39 00000034 4038CE                  cmp sil, cl
+    40 00000037 75D3                    jne nestedLoop
+    41                                 
+    42 00000039 80FB00                  cmp bl, FALSE
+    43 0000003C 7400                    je last
+    44 0000003E E2C7                    loop sortingLoop
+    45                                 
+    46                                 
+    47                                 last:
+    48 00000040 48C7C03C000000          mov rax, SYS_exit
+    49 00000047 48C7C700000000          mov rdi, EXIT_SUCCESS
+    50 0000004E 0F05                    syscall
