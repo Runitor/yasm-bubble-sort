@@ -2,7 +2,7 @@
 
 A simple program to sort a list of numbers using the following bubble sort algorithm:
 
-	```c
+	```javascript
 	if (isAwesome){
 	  return true
 	}
