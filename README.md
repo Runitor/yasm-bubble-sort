@@ -20,7 +20,7 @@ for (i = (length - 1) to 0) {
 * bubble-sort.asm - source code
 * bubble-sort.lst - list file
 * bubble-sort.o   - object file
-* bubble-sort.out - executable (Linux)
+* bubble-sort.out - executable (Linux64)
 * asm64           - compile/link script
 * DIF.txt         - gdb debugger input file
 * out.txt         - gdb debugger output file
