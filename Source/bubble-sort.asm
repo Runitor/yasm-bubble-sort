@@ -1,6 +1,6 @@
 ; [YASM] Bubble Sort
 ; July 15, 2020
-; Runitor
+; https://github.com/Runitor/yasm-bubble-sort/
 
 ; A simple program to sort a list of numbers
 ; using the Bubble Sort algorithm.
